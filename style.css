@@ -12,6 +12,8 @@ html,
 body {
     margin: 0;
     padding: 0;
+    /* background-image: url('assets/homepage-background.jpg'); */
+    background-size: cover;
 }
 
 .header {
@@ -22,7 +24,7 @@ body {
     display: block;
 }
 
-nav {
+.header-nav {
     width: 100%;
     display: flex;
     align-items: center;
@@ -54,18 +56,19 @@ nav {
 
 .header-options {
     display: flex;
+    font-family: "Roboto Light";
 }
 
 nav ul li {
     display: inline-block;
     list-style: none;
-    margin: 10px 30px;
-    font-family: "Roboto Light";
+    margin: 10px 10px;
 }
 
 a {
     text-decoration: none;
     color: black;
+    display: inline-block;
 }
 
 .header-main-options {
@@ -81,6 +84,81 @@ a {
     width: 10%;
     height: auto;
 }
+
+.main-page-text {
+    padding-top: 10%;
+    padding-left: 10%;
+}
+
+.main-page-title-text {
+    font-family: 'Roboto Light';
+}
+
+.main-page-subtext {
+    font-family: 'Roboto Light';
+    font-size: 20px;
+}
+
+
+/* Dropdown Button */
+.dropbtn {
+    font-family: "Roboto Light";
+    background-color: transparent;
+    color: black;
+    padding: 25px;
+    font-size: 25px;
+    border: none;
+}
+  
+  /* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+  /* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 600px; /* Adjust width as needed */
+    padding: 80px; /* Adjust padding as needed */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 70px; /* Adjust the distance from the top of the button */
+    left: 0; /* Align with the left side of the button */
+    transform: translateX(-20%); /* Center the menu horizontally */
+}
+  
+  /* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn { transform: translateY(-5px); }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #card-container {
     display: flex;
