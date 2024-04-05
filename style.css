@@ -1,21 +1,85 @@
+@font-face { 
+    font-family: 'Roboto Medium';
+    src: url('assets/Roboto-Medium.ttf') format('truetype');
+}
+
+@font-face { 
+    font-family: 'Roboto Light';
+    src: url('assets/Roboto-Light.ttf') format('truetype');
+}
+
 html,
 body {
     margin: 0;
     padding: 0;
 }
 
-.main-header {
-    background-color: rgba(0, 0, 0, .3);
+.header {
+    /* background-color: black; */
     padding-bottom: 10px;
+    width: 100%;
+    height: 10vh;
+    display: block;
 }
 
-.title {
-    text-align: center;
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.logo-container {
+    height: 100%;
+    gap: 2px;
+    display: flex;
+    margin-left: 2%;
+    /* background-color: red; */
+}
+
+.microphone-logo {
+    width: 10%;
+    height: auto;
+}
+
+.we-music-title {
     margin: 0;
-    font-size: 8em;
-    font-family: "Helvetica";
+    margin-top: 6px;
+    font-size: 30px;
+    font-family: "Roboto Medium";
     font-weight: normal;
-    color: white;
+    color: black;
+}
+
+.header-options {
+    display: flex;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 30px;
+    font-family: "Roboto Light";
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.header-main-options {
+    font-size: 25px;
+}
+
+.dropdown-logo {
+    width: 5%;
+    height: auto;
+}
+
+.shopping-cart-logo {
+    width: 10%;
+    height: auto;
 }
 
 #card-container {
