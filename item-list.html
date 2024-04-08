@@ -62,6 +62,16 @@
         </div>
     </div>
 
+    <!-- Sorting Button -->
+    <div class="dropdown-sort">
+        <button class="dropbtn-sort">Sort By</button>
+        <div class="dropdown-content-sort">
+          <a href="#" onclick="sortItemsByRating(); updateFeed();">Rating</a>
+          <a href="#" onclick="sortItemsAlphabetically(); updateFeed();">Name</a>
+          <a href="#" onclick="sortItemsByPrice(); updateFeed();">Price</a>
+        </div>
+    </div>
+
 
     <div id="results-text">
         <div class="main-page-text">
@@ -70,46 +80,7 @@
     </div>
 
     <!-- Holds all of the main page dynamically loaded content -->
-    <div class="results-container">
-        <div class="item-card">
-            <img src="https://media.guitarcenter.com/is/image/MMGS7/L18959000001000-00-600x600.jpg" class="item-image">
-            <div class="item-info"> 
-                <h1 class="item-name">Martin Special 000-X1AE Style Acoustic-Electric Guitar Natural</h1>
-                <h1 class="item-rating">4.5 out of 5</h1>
-                
-            </div>
-            <h1 class="item-cost">$100</h1>
-        </div>
-
-        <div class="item-card">
-            <img src="https://media.guitarcenter.com/is/image/MMGS7/L18959000001000-00-600x600.jpg" class="item-image">
-            <div class="item-info"> 
-                <h1 class="item-name">Martin Special 000-X1AE Style Acoustic-Electric Guitar Natural</h1>
-                <h1 class="item-rating">4.5 out of 5</h1>
-                
-            </div>
-            <h1 class="item-cost">$100</h1>
-        </div>
-
-        <div class="item-card">
-            <img src="https://media.guitarcenter.com/is/image/MMGS7/L18959000001000-00-600x600.jpg" class="item-image">
-            <div class="item-info"> 
-                <h1 class="item-name">Martin Special 000-X1AE Style Acoustic-Electric Guitar Natural</h1>
-                <h1 class="item-rating">4.5 out of 5</h1>
-                
-            </div>
-            <h1 class="item-cost">$100</h1>
-        </div>
-
-        <div class="item-card">
-            <img src="https://media.guitarcenter.com/is/image/MMGS7/L18959000001000-00-600x600.jpg" class="item-image">
-            <div class="item-info"> 
-                <h1 class="item-name">Martin Special 000-X1AE Style Acoustic-Electric Guitar Natural</h1>
-                <h1 class="item-rating">4.5 out of 5</h1>
-                
-            </div>
-            <h1 class="item-cost">$100</h1>
-        </div>
+    <div id="results-container" class="results-container">
     </div>  
 
     <script>
