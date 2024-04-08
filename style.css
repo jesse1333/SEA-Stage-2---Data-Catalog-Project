@@ -56,9 +56,9 @@ body {
 }
 
 .home-page-guitar {
-    top: 20%;
-    left: 30%;
-    width: 90%;
+    top: 25%;
+    left: 58%;
+    width: 25%;
     position: absolute;
 }
 
@@ -128,15 +128,14 @@ a {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
-    width: 1000px; /* Adjust width as needed */
-    height: 700px; /* Adjust height as needed */
+    width: 700px; /* Adjust width as needed */
+    height: 500px; /* Adjust height as needed */
     padding: 20px; /* Adjust padding as needed */
-    left: -300%;
+    left: -200%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     transform: translateX(-20%); /* Center the menu horizontally */
 }
-
 
 /* Show the dropdown menu */
 .dropdown:hover .dropdown-content {
@@ -144,18 +143,18 @@ a {
 }
 
 .instruments-grid-container {
-    width: 1000px; /* Adjust width as needed */
-    height: 700px; /* Adjust height as needed */
+    width: 700px; /* Adjust width as needed */
+    height: 500px; /* Adjust height as needed */
     padding: 20px; /* Adjust padding as needed */
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns */
-    
+    grid-template-columns: repeat(2, 1fr); /* 4 columns */
 }
 
 .instruments-grid-item {
     width: 85%;
-    height: 140px; /* Set a fixed height for uniformity, adjust as needed */
+    height: auto; /* Set a fixed height for uniformity, adjust as needed */
+    overflow:hidden;
 }
 
 
@@ -253,4 +252,77 @@ a {
 .catalog-button:hover span:after {
     opacity: 1;
     right: 0;
+}
+
+
+
+
+
+/* Results Code */
+
+#item-card-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.item-card {
+    /* display: none; */
+    display: flex;
+    justify-content: left;
+    width: 900px; /* Adjust width as needed */
+    height: 100px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin: 20px auto; /* Center the box horizontally */
+    /* border: solid 1pt #393E41; */
+    
+}
+
+.item-card-content {
+    font-family: "Roboto Light";
+    padding-left: 3%;
+    display: flex;
+}
+
+.item-card img {
+    width: 10%;
+    height: auto; 
+    padding-left: 20px;
+}
+
+
+.item-info {
+    font-family: "Roboto Light";
+    padding-left: 3%;
+    display: flex;
+    flex-direction: column;
+    line-height: 0.7;
+    width:70%;
+}
+
+.item-name {
+    font-size: 20px;
+    margin-bottom: 0;
+    width:100%;
+    font-family: "Roboto Medium";
+}
+
+.item-rating {
+    font-size: 17px;
+    padding-top: 1%;
+    margin-bottom: 1%;
+}
+
+.item-cost {
+    font-size: 20px;
+    font-family: "Roboto Light";
+    width:20%;
+    text-align: right;
+    align-self: stretch;
+    height: 100%;
+    margin-top: 0%;
+    padding-top: 0.85%;
 }
