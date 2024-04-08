@@ -419,7 +419,7 @@ function updateFeed() {
       item.name +
       '</h1><h1 class="item-rating">' +
       item.rating.toFixed(1) +
-      ' out of 5</h1><h3 class="item-adjust-cart-text"> Add to Cart </h3><a href="#" class="item-cart"><img src="assets/add-to-cart.svg" alt="SVG Add to Cart"></a></div><h1 class="item-cost">' + '$' +
+      ' out of 5.0</h1><h3 class="item-adjust-cart-text"> Add to Cart </h3><a href="#" class="item-cart"><img src="assets/add-to-cart.svg" alt="SVG Add to Cart"></a></div><h1 class="item-cost">' + '$' +
       item.cost.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}); +
       "</h1></div>";
   }
