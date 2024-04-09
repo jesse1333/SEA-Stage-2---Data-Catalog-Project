@@ -56,7 +56,7 @@ body {
 }
 
 .home-page-guitar {
-    top: 25%;
+    top: 13%;
     left: 58%;
     width: 25%;
     position: absolute;
@@ -90,7 +90,7 @@ a {
 }
 
 .main-page-text {
-    padding-top: 12%;
+    padding-top: 7%;
     padding-left: 15%;
     width: 40%;
 }
@@ -248,7 +248,7 @@ a {
     margin: 5px;
     position: absolute;
     left: 14%;
-    top: 70%;
+    top: 60%;
 }
 
 .catalog-button span {

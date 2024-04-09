@@ -23,26 +23,14 @@
  *
  */
 
-const FRESH_PRINCE_URL =
-  "https://upload.wikimedia.org/wikipedia/en/3/33/Fresh_Prince_S1_DVD.jpg";
-const CURB_POSTER_URL =
-  "https://m.media-amazon.com/images/M/MV5BZDY1ZGM4OGItMWMyNS00MDAyLWE2Y2MtZTFhMTU0MGI5ZDFlXkEyXkFqcGdeQXVyMDc5ODIzMw@@._V1_FMjpg_UX1000_.jpg";
-const EAST_LOS_HIGH_POSTER_URL =
-  "https://static.wikia.nocookie.net/hulu/images/6/64/East_Los_High.jpg";
 
-// This is an array of strings (TV show titles)
-let titles = [
-  "Fresh Prince of Bel Air",
-  "Curb Your Enthusiasm",
-  "East Los High",
-];
 
-// Arrays
-
+// Arrays Declarations
 let cartItems = [];
 let cartBoolean = [];
 let allItems = [];
 
+// Item Class Declarations
 class Item {
   constructor(name, rating, brand, cost, description, image, type) {
     this.name = name;
@@ -113,6 +101,23 @@ class Item {
   }
 }
 
+class Guitar extends Item {
+  constructor(name, rating, brand, cost, description, image, type, guitarType) {
+    super(name, rating, brand, cost, description, image, type);
+    this.guitarType = guitarType;
+  }
+
+  // Getter
+  getGuitarType() {
+    return this.guitarType;
+  }
+
+  // Setter
+  setGuitarType(guitarType) {
+    this.guitarType = guitarType;
+  }
+}
+
 class Piano extends Item {
   constructor(name, rating, brand, cost, description, image, type, pianoType) {
     super(name, rating, brand, cost, description, image, type);
@@ -147,6 +152,7 @@ class Keyboard extends Item {
   }
 }
 
+//Database
 let acousticGuitars = [
   {
     name: "Gibson J-45 Standard Rosewood Acoustic-Electric",
@@ -157,7 +163,8 @@ let acousticGuitars = [
       "The J-45 is Gibson's best-selling acoustic of all time. Nicknamed 'The Workhorse' and first introduced in 1942, this iconic acoustic has become the cornerstone of its round-shoulder, dreadnought line. World renowned for its full, balanced expression, warm bass, and excellent projection, the J-45 has been refined to carry this legacy to new heights.",
     image:
       "https://media.guitarcenter.com/is/image/MMGS7/M09011000001000-00-600x600.jpg",
-    type: "Acoustic Guitar",
+    type: "Guitar",
+    guitarTypeString: "Acoustic",
   },
 
   {
@@ -169,7 +176,8 @@ let acousticGuitars = [
       "The 414ce V-Class Special-Edition Grand Auditorium acoustic-electric guitar from Taylor offers musicians an ideal blend of powerful tone and accessible playing comfort. Built with a timeless combination of tonewoods—including a Sitka spruce top, and Indian rosewood back and sides—the 414ce produces iconic acoustic timbre that’s powerful, articulate and harmonically complex. Innovative V-Class bracing further optimizes the guitar's unforgettable sound, which also amplifies naturally using custom Expression System 2 electronics. The Taylor 414ce is a responsive acoustic-electric that feels, sounds and looks fantastic.",
     image:
       "https://media.guitarcenter.com/is/image/MMGS7/L26331000001000-00-600x600.jpg",
-    type: "Acoustic Guitar",
+    type: "Guitar",
+    guitarTypeString: "Acoustic",
   },
 
   {
@@ -181,7 +189,8 @@ let acousticGuitars = [
       "The Martin Special 000-X1AE Style acoustic-electric guitar combines over 180 years of craftsmanship with modern innovation. This balanced auditorium-sized Martin acoustic-electric features a solid Sitka spruce top with a customized rosette and durable, eco-friendly high-pressure laminate back and sides with a figured rosewood pattern. The strong mahogany neck and Richlite fingerboard deliver fast, even playability across the neck. Reliable Fishman MX electronics allow you to plug in to any amp or mixing board. is proud to offer the legendary Martin tone and feel you know and love at an accessible price in the Special 000-X1AE.",
     image:
       "https://media.guitarcenter.com/is/image/MMGS7/L76820000001000-00-600x600.jpg",
-    type: "Acoustic Guitar",
+    type: "Guitar",
+    guitarTypeString: "Acoustic",
   },
 
   {
@@ -193,7 +202,8 @@ let acousticGuitars = [
       "The Martin Special X Style 000 cutaway acoustic-electric guitar is a performance-focused acoustic-electric guitar combining Martin's time-honored craftsmanship with modern electronics for an instrument ideal for live playing or recording. Its stylish black satin finish and cutaway body give it a daring look, while its solid Jett Black HPL top, back and sides provide full, resonant tone. Easy playability comes courtesy of its slim neck and low action. Plug in the Fishman MX electronics to amplify your sound with studio-quality detail. Whether you're gigging at a local venue or laying down tracks in a professional studio, the Special X Style 000 will make you the star of the show.",
     image:
       "https://media.guitarcenter.com/is/image/MMGS7/L66003000001000-00-600x600.jpg",
-    type: "Acoustic Guitar",
+    type: "Guitar",
+    guitarTypeString: "Acoustic",
   },
 
   {
@@ -205,7 +215,8 @@ let acousticGuitars = [
       "The 214e Deluxe Grand Auditorium Acoustic-Electric Guitar is a professional-grade instrument incorporating innovative design and premium components for flawless plugged-in performance and rich, balanced acoustic tone. At the heart of the 214e Deluxe is a solid Sitka spruce top paired with layered rosewood back and sides, a combination that produces crisp highs, focused midrange and robust low end. Onboard ES2 electronics faithfully amplify the guitar's acoustic voice and provide flexible tone shaping for any live or studio application. With deluxe appointments like white binding, abalone inlays and a high-gloss finish, the 214e Deluxe is as stunning to look at as it is to play.",
     image:
       "https://media.guitarcenter.com/is/image/MMGS7/L18959000001000-00-600x600.jpg",
-    type: "Acoustic Guitar",
+    type: "Guitar",
+    guitarTypeString: "Acoustic",
   },
 ];
 
@@ -219,7 +230,8 @@ let electricGuitars = [
       "The Schecter Synyster Gates Custom FR-S Relic electric guitar unlocks the ultimate rock ’n’ roll/metal performance experience. This signature model, designed with Avenged Sevenfold's lead axeman Synyster Gates, gives you the batwings you need for soaring solos and biting riffs. With a Schecter USA Synyster Gates signature humbucking bridge pickup, Sustainiac neck pickup and gorgeously expressive Floyd Rose 1500 series tremolo system, the strength of the world is on your shoulder.",
     image:
       "https://media.guitarcenter.com/is/image/MMGS7/M11245000001000-00-600x600.jpg",
-    type: "Electric Guitar",
+    type: "Guitar",
+    guitarTypeString: "Electric",
   },
 
   {
@@ -231,7 +243,8 @@ let electricGuitars = [
       "The PRS SE Custom 24 Limited Edition lets you experience iconic Paul Reed Smith style and tone in an affordable package. The PRS Custom 24 is a legend in its own right, boasting incredible sonic versatility that jazz cats and metalheads have each come to embrace. Built for musicians seeking performance and reliability, this SE model features the brand’s hallmark bird inlays and signature aesthetics, complete with 85/15 “S” pickups for articulate tones across genres. Striking Ruby and Blue Fade finishes are only around for a limited time, marking this a special addition to the PRS SE Custom 24 lineup.",
     image:
       "https://media.guitarcenter.com/is/image/MMGS7/M09119000001000-00-600x600.jpg",
-    type: "Electric Guitar",
+    type: "Guitar",
+    guitarTypeString: "Electric",
   },
 
   {
@@ -243,7 +256,8 @@ let electricGuitars = [
       "Designed in close collaboration with Gibson Custom Shop, the Epiphone Dave Grohl DG-335 blends the best features of classic semi-hollow and solidbody electric guitars. Drawing from the ES-335 and Trini Lopez models, it's crafted for Foo Fighters fans and aficionados of Dave Grohl's iconic guitar tone. The DG-335 has a comfortable, familiar feel with versatile sound-shaping controls to capture the rock legend's playing style.",
     image:
       "https://media.guitarcenter.com/is/image/MMGS7/M05675000001000-00-600x600.jpg",
-    type: "Electric Guitar",
+    type: "Guitar",
+    guitarTypeString: "Electric",
   },
 
   {
@@ -255,7 +269,8 @@ let electricGuitars = [
       "The Epiphone 1963 Firebird I, inspired by the Gibson Custom original, lets you channel the iconic style and sound of a classic. With its eye-catching design, this sleek solidbody electric guitar authentically captures a vintage vibe made famous by legends, including blues icon Johnny Winter, Keith Richards and Brian Jones of The Rolling Stones, Eric Clapton and Phil Manzanera of Roxy Music. The Epiphone 1963 Firebird I is built for today’s player while staying true to tradition, offering timeless tone and smooth playability for those who dig its hot-rodded, future-retro trappings.",
     image:
       "https://media.guitarcenter.com/is/image/MMGS7/M04077000001000-00-600x600.jpg",
-    type: "Electric Guitar",
+    type: "Guitar",
+    guitarTypeString: "Electric",
   },
 
   {
@@ -267,7 +282,8 @@ let electricGuitars = [
       "The Fender American Ultra Telecaster melds innovative design with classic Tele vibe for guitarists seeking top-tier performance. This unique Telecaster features Fender's Modern D neck profile with rolled edges for endless playing comfort. The compound 10\"–14\" radius fingerboard allows you to solo effortlessly anywhere on the neck. Dual Ultra Noiseless Vintage pickups serve up a plethora of pristine tones without hum or buzz. This limited-edition Tele showcases a stunning Tiger's Eye finish on a flame maple top and a lightweight alder body with contoured edges for hours of playing comfort. With sealed locking tuners and a premium case, this versatile Tele provides state-of-the-art function for gigs, sessions and beyond.",
     image:
       "https://media.guitarcenter.com/is/image/MMGS7/M04246000001000-00-600x600.jpg",
-    type: "Electric Guitar",
+    type: "Guitar",
+    guitarTypeString: "Electric",
   },
 ];
 
@@ -319,7 +335,7 @@ let pianos = [
     description:
       "Perfected through Yamaha SU7 leading-edge technology, the YUS Series projects superior voicing with rich sound and delicate balance. A simple, sophisticated cabinet produces superb acoustics to the subtlest notes. This is a beautiful piano as appropriate for professionals as for home piano enthusiasts.",
     image:
-      "https://pianopricepoint.com/wp-content/uploads/2017/04/Yamaha-YUS3.jpg",
+      "https://www.cunninghampiano.com/cdn/shop/products/yus3_pe.jpg?v=1675968419&width=1200",
     type: "Piano",
     pianoType: "Upright",
   },
@@ -623,6 +639,70 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+
+// Gets input from search bar
+function getInput() {
+  const searchTerm = document.getElementById("search-bar").value.toLowerCase();
+  document.getElementById('search-bar').value = '';
+
+
+  for (let i = 0; i < allItems; i++) {
+    console.log(typeof allItems[i] + "\n");
+  }
+
+
+
+  let results1 = allItems.filter(allItems => similarity(allItems.name.toLowerCase(), searchTerm) > 0.6);
+  let results2 = allItems.filter(allItems => similarity(allItems.brand.toLowerCase(), searchTerm) > 0.6);
+  let results3 = allItems.filter(allItems => similarity(allItems.type.toLowerCase(), searchTerm) > 0.6);
+
+  let mergedResults = results1.concat(results2);
+  mergedResults = mergedResults.concat(results3);
+  updateFeed(mergedResults);
+}
+
+//Similarity Checker Function
+function similarity(s1, s2) {
+  const longer = s1.length > s2.length ? s1 : s2;
+  const shorter = s1.length > s2.length ? s2 : s1;
+  const longerLength = longer.length;
+  if (longerLength === 0) {
+      return 1.0;
+  }
+  return (longerLength - editDistance(longer, shorter)) / parseFloat(longerLength);
+}
+
+//Similarity Checker Helper Function
+function editDistance(s1, s2) {
+  s1 = s1.toLowerCase();
+  s2 = s2.toLowerCase();
+
+  let costs = new Array();
+  for (let i = 0; i <= s1.length; i++) {
+      let lastValue = i;
+      for (let j = 0; j <= s2.length; j++) {
+          if (i === 0)
+              costs[j] = j;
+          else {
+              if (j > 0) {
+                  let newValue = costs[j - 1];
+                  if (s1.charAt(i - 1) !== s2.charAt(j - 1))
+                      newValue = Math.min(Math.min(newValue, lastValue),
+                          costs[j]) + 1;
+                  costs[j - 1] = lastValue;
+                  lastValue = newValue;
+              }
+          }
+      }
+      if (i > 0)
+          costs[s2.length] = lastValue;
+  }
+  return costs[s2.length];
+}
+
+
+
 
 // // This function adds cards the page to display the data in the array
 // function showCards() {
