@@ -359,7 +359,7 @@ let keyboards = [
     brand: "Nord",
     cost: 5699,
     description:
-      "The 88-key Nord Stage 4 has landed at Guitar Center. Creativity and otherworldly sounds are a patch away with this easy-to-use keyboard. Featuring an intuitive panel design, premium 88-key fully weighted triple-sensor keybed and complete effect sections for each Layer, this versatile instrument comes fully equipped for the home, studio and stage.",
+      "The 88-key Nord Stage 4 has landed. Creativity and otherworldly sounds are a patch away with this easy-to-use keyboard. Featuring an intuitive panel design, premium 88-key fully weighted triple-sensor keybed and complete effect sections for each Layer, this versatile instrument comes fully equipped for the home, studio and stage.",
     image:
       "https://media.guitarcenter.com/is/image/MMGS7/M00636000000000-00-600x600.jpg",
     type: "keyboard",
@@ -385,7 +385,7 @@ let keyboards = [
     brand: "Yamaha",
     cost: 1999.99,
     description:
-      "The biggest of the Yamaha MODX+ series with its 88 keys, the MODX8+ synthesizer struts a staggering amount of power and sonic versatility. Ideal for music production and sound design alike, its eight-operator, fully programmable FM-X engine delivers an array of sounds as vast as your imagination. The Yamaha MODX8+ features a semi-weighted, synth-action keyboard that is purpose-designed to stimulate creativity and emotive performance. Much of its muscle comes from the same technology that powers the top-of-the-line Yamaha MONTAGE synth line, blending the ingenious AMW2 (Advanced Wave Memory 2) engine with the sublime synthesis of FM-X (Frequency Modulation) for a limitless cosmos of creative possibilities—with double the polyphony of the original MODX8. Available at Guitar Center, this cutting-edge 5-octave MODX8+ synth keyboard is ready-made to inspire awe and make your ideas a reality.",
+      "The biggest of the Yamaha MODX+ series with its 88 keys, the MODX8+ synthesizer struts a staggering amount of power and sonic versatility. Ideal for music production and sound design alike, its eight-operator, fully programmable FM-X engine delivers an array of sounds as vast as your imagination. The Yamaha MODX8+ features a semi-weighted, synth-action keyboard that is purpose-designed to stimulate creativity and emotive performance. Much of its muscle comes from the same technology that powers the top-of-the-line Yamaha MONTAGE synth line, blending the ingenious AMW2 (Advanced Wave Memory 2) engine with the sublime synthesis of FM-X (Frequency Modulation) for a limitless cosmos of creative possibilities—with double the polyphony of the original MODX8.",
     image:
       "https://media.guitarcenter.com/is/image/MMGS7/L96788000000000-00-600x600.jpg",
     type: "keyboard",
@@ -457,7 +457,7 @@ let capos = [
   },
 
   {
-    name: "D'Addario NS Reflex Capo Black",
+    name: "D Addario NS Reflex Capo Black",
     rating: 4.3,
     brand: "Dunlop",
     cost: 19.99,
@@ -500,7 +500,7 @@ let amplifiers = [
     brand: "Gibson",
     cost: 1799,
     description:
-      "The Gibson Falcon 20 1x12 tube combo pays homage to the famed Skylark amps of the ’50s and ’60s—the iconic guitar company’s entry to becoming one of the world’s first manufacturers of amplifiers. Inspired by its legendary past, the Gibson Falcon incorporates a brand-new schematic by trailblazing designer Randall Smith and the formidable MESA/Boogie design team, bringing inimitable, handcrafted vintage tone to the 21st century. Featuring a single, no-nonsense channel with volume and tone controls, plus onboard reverb and tremolo, the Falcon 20 serves soaring sounds from the moment you plug in. This powerfully simple amp best suits tone connoisseurs seeking the nuanced dynamic response of old-school classics, starting with lean cleans that overdrive into meaty rhythms and leads with ease. The ultraboutique Gibson Falcon 20 combo offers unparalleled retro magic in a thoroughly contemporary reimagining of a certified classic.",
+      "The Gibson Falcon 20 1x12 tube combo pays homage to the famed Skylark amps of the ’50s and ’60s—the iconic guitar company’s entry to becoming one of the world’s first manufacturers of amplifiers. Inspired by its legendary past, the Gibson Falcon incorporates a brand-new schematic by trailblazing designer Randall Smith and the formidable MESA/Boogie design team, bringing inimitable, handcrafted vintage tone to the 21st century. This powerfully simple amp best suits tone connoisseurs seeking the nuanced dynamic response of old-school classics, starting with lean cleans that overdrive into meaty rhythms and leads with ease. The ultraboutique Gibson Falcon 20 combo offers unparalleled retro magic in a thoroughly contemporary reimagining of a certified classic.",
     image:
       "https://media.guitarcenter.com/is/image/MMGS7/M03971000001000-00-600x600.jpg",
     type: "amplifier",
@@ -519,7 +519,7 @@ let amplifiers = [
   },
 
   {
-    name: "Fender Vintage Reissue '65",
+    name: "Fender Vintage Reissue 65",
     rating: 4.9,
     brand: "Fender",
     cost: 1699.99,
@@ -745,7 +745,7 @@ function updateFeed(itemArray) {
       '<div class="item-card"><img src="' +
       item.image +
       '" class="item-image"><div class="item-info"><h1 class="item-name">' +
-      item.name +
+      '<a href="#" onclick="showItem(\'' + item.name + '\')">' + item.name + '</a>' +
       '</h1><h1 class="item-rating">' +
       item.rating.toFixed(1) +
       ' out of 5.0</h1><h3 class="item-adjust-cart-text"> ' +
@@ -866,6 +866,40 @@ function sortItemsByPrice(itemArray) {
   itemArray.sort((a, b) => {
     return b.cost - a.cost;
   });
+}
+
+//Shows item
+function showItem(itemName) {
+  console.log("hello")
+  console.log(itemName);
+
+  let item = findItem(itemName);
+
+  // Sets the header text to Items
+  const titleContainer = document.getElementById("main-page-title-text");
+  titleContainer.innerHTML = 'Item';
+
+  // Sets the information display page
+  const cardContainer = document.getElementById("results-container");
+  cardContainer.innerHTML = 
+  '<div class="item-view">' +
+  '<img src="' + item.image + '" class="item-image">' +
+  '<div class="item-info">' +
+  '<div class="item-view-content">' +
+  '<h1 class="item-name">' + item.name + '</h1>' +
+  '<div class="item-description-group">' +
+  '<h1 class="item-rating">Rating: ' + item.rating + ' out of 5</h1>' +
+  '<h1 class="item-rating">Brand: ' + item.brand + '</h1>' +
+  '<h1 class="item-rating">Price: ' + "$" +
+  item.cost.toLocaleString("en-US", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }) + '</h1>' +
+  '</div>' +
+  '</div>' +
+  '<h2 class="item-view-description">' + item.description + '</h2>' +
+  '</div>' +
+  '</div>';
 }
 
 // On Page Load
