@@ -221,6 +221,12 @@ a {
   font-family: "Roboto Light";
 }
 
+.search-icon {
+    width: 100%;
+    height: auto;
+    padding-top: 20%;
+}
+
 .wrap{
   width: 40%;
   position: absolute;

@@ -23,8 +23,6 @@
  *
  */
 
-
-
 // Arrays Declarations
 let cartItems = [];
 let cartBoolean = [];
@@ -421,13 +419,261 @@ let keyboards = [
   },
 ];
 
+let capos = [
+  {
+    name: "Kyser Quick-Change Capo",
+    rating: 4.9,
+    brand: "Kyser",
+    cost: 24.95,
+    description:
+      "The Kyser Quick-Change Capo is an innovative capo that allows guitarists to swiftly switch between keys without re-tuning. Featuring a trigger-release mechanism, the Kyser Quick-Change Capo can be attached and removed from the fretboard in a matter of seconds. Its dual-action clamping system ensures even pressure across all six strings for buzz-free play. Constructed from aircraft-grade aluminum, the Kyser Quick-Change Capo is built to last through years of heavy use on stage or in the studio. The Kyser Quick-Change Capo is ideal for guitarists seeking a high-quality capo for rapid key changes and tuning adjustments.",
+    image:
+      "https://media.guitarcenter.com/is/image/MMGS7/361600000006000-00-600x600.jpg",
+    type: "capo",
+  },
+
+  {
+    name: "Ernie Ball Axis Capo Black",
+    rating: 4.5,
+    brand: "Ernie",
+    cost: 14.99,
+    description:
+      "The Ernie Ball Axis Capo allows you to quickly and accurately change keys with a single hand. Featuring an innovative dual-radius design, this capo conforms perfectly to either flat or curved fretboards, ensuring buzz-free performance across all six or seven strings of both electric and acoustic guitars. The Axis Capo provides optimal clamping pressure and crisp, on-pitch tone all the way up the neck, wherever your inspiration may lead.",
+    image:
+      "https://media.guitarcenter.com/is/image/MMGS7/L56933000001000-00-600x600.jpg",
+    type: "capo",
+  },
+
+  {
+    name: "Dunlop Trigger Curved Guitar Capo Black",
+    rating: 4.1,
+    brand: "Dunlop",
+    cost: 17.99,
+    description:
+      "Dunlop's Trigger Curved Capo allows you to swiftly shift between keys without sacrificing tone or tuning. This innovative capo is constructed from aircraft-grade aluminum and padded to protect fretboards, embracing instruments with a firm yet gentle grip. The trigger mechanism provides a quick-release action, allowing players to make key changes on the fly.",
+    image:
+      "https://media.guitarcenter.com/is/image/MMGS7/361506000001000-00-600x600.jpg",
+    type: "capo",
+  },
+
+  {
+    name: "D'Addario NS Reflex Capo Black",
+    rating: 4.3,
+    brand: "Dunlop",
+    cost: 19.99,
+    description:
+      "The D'Addario NS Reflex Capo is an innovative capo designed for buzz-free, in-tune playing at every fret. The NS Reflex Capo's patent-pending Side-Action geometry distributes pressure evenly across the neck, eliminating the pulling and detuning that plagues standard capos. Combined with a micrometer tension adjustment, the Reflex Capo applies just the right amount of force for your instrument. Constructed of aircraft-grade aluminum, the capo adds a negligible 1.5 ounces to your guitar, so you'll barely notice it's there until you need to change positions. The integrated pick holder keeps your favorite plectrum close at hand. The NS reflex capo is created by legendary designer Ned Steinberger.",
+    image:
+      "https://media.guitarcenter.com/is/image/MMGS7/J48291000001000-00-600x600.jpg",
+    type: "capo",
+  },
+
+  {
+    name: "G7th Performance 3 ART Capo Black",
+    rating: 4.6,
+    brand: "G7th",
+    cost: 69.99,
+    description:
+      "The Performance 3 ART Capo from G7th is an innovative capo designed to eliminate the tuning and fretting issues that plague standard capos. Featuring patented Adaptive Radius Technology, the string pad mechanism dynamically adjusts to match the fingerboard radius of any guitar, applying even pressure across all strings for unparalleled tuning stability. The Performance 3 also has G7th's Unique Tension Control system which provides intuitive adjustment of string pressure with a simple squeeze. Whether using an acoustic, electric or hybrid guitar, guitarists can have confidence that the Performance 3 will keep their instrument in tune.",
+    image:
+      "https://media.guitarcenter.com/is/image/MMGS7/L48142000001000-00-600x600.jpg",
+    type: "capo",
+  },
+];
+
+let amplifiers = [
+  {
+    name: "Line 6 Powercab 112 Plus 250W",
+    rating: 4.5,
+    brand: "Powercab",
+    cost: 849.99,
+    description:
+      "The Powercab 112 Plus active speaker system was purpose-built for guitar players who want to use amp modeling technology. Developed by Line 6, pioneers of modeling amps and effects, the Powercab 112 Plus does for guitar speakers what their Helix series did for guitar processors. The Powercab 112 Plus is the only speaker system that provides both a neutral, full-range response as well as proprietary speaker modeling technology for a dynamic, amp-in-the-room experience.",
+    image:
+      "https://media.guitarcenter.com/is/image/MMGS7/L18389000001000-00-600x600.jpg",
+    type: "amplifier",
+  },
+
+  {
+    name: "Gibson Falcon 20 1x12",
+    rating: 4,
+    brand: "Gibson",
+    cost: 1799,
+    description:
+      "The Gibson Falcon 20 1x12 tube combo pays homage to the famed Skylark amps of the ’50s and ’60s—the iconic guitar company’s entry to becoming one of the world’s first manufacturers of amplifiers. Inspired by its legendary past, the Gibson Falcon incorporates a brand-new schematic by trailblazing designer Randall Smith and the formidable MESA/Boogie design team, bringing inimitable, handcrafted vintage tone to the 21st century. Featuring a single, no-nonsense channel with volume and tone controls, plus onboard reverb and tremolo, the Falcon 20 serves soaring sounds from the moment you plug in. This powerfully simple amp best suits tone connoisseurs seeking the nuanced dynamic response of old-school classics, starting with lean cleans that overdrive into meaty rhythms and leads with ease. The ultraboutique Gibson Falcon 20 combo offers unparalleled retro magic in a thoroughly contemporary reimagining of a certified classic.",
+    image:
+      "https://media.guitarcenter.com/is/image/MMGS7/M03971000001000-00-600x600.jpg",
+    type: "amplifier",
+  },
+
+  {
+    name: "Circa 74 AV150-10",
+    rating: 2.1,
+    brand: "Circa",
+    cost: 1199,
+    description:
+      'The Taylor Circa 74 AV150-10 lets you amplify both your acoustic guitar and vocals with ease. Designed by Taylor Guitars, this innovative amp combines two independent channels—one with XLR and 1/4" inputs for mics and guitars, the other a 1/4" input for guitars. Each channel has its own level, volume and 3-band EQ controls so you can mix your guitar and vocals smoothly. The Circa 74\'s solid mahogany cabinet and 10" speaker contribute to a warm, smooth tone that enhances the natural resonance of acoustic guitars. With 150W of power, it easily fills small venues with rich, detailed sound. The intuitive EQ shapes your tone, while built-in reverb adds ambience. Bluetooth connectivity lets you play along to songs. The furniture-quality mahogany amp stand angles the amp for optimal projection.',
+    image:
+      "https://media.guitarcenter.com/is/image/MMGS7/M08872000001000-00-600x600.jpg",
+    type: "amplifier",
+  },
+
+  {
+    name: "Fender Vintage Reissue '65",
+    rating: 4.9,
+    brand: "Fender",
+    cost: 1699.99,
+    description:
+      "The Fender '65 Deluxe Reverb combo amp delivers the coveted sound of a mid-1960s Fender amp in a portable package. This 22W all-tube amp features two channels—normal and vibrato—with classic tube-driven spring reverb and tube vibrato to provide shimmering pitch-modulation effects. Its 12\" Jensen C-12K speaker pumps out the full, snappy tones that shaped the sound of rock, blues and country.",
+    image:
+      "https://media.guitarcenter.com/is/image/MMGS7/480507000001000-00-600x600.jpg",
+    type: "amplifier",
+  },
+
+  {
+    name: "Fender Tone Master Twin Reverb 200W",
+    rating: 4.5,
+    brand: "Fender",
+    cost: 1249.99,
+    description:
+      "The Fender Tone Master Twin Reverb 200W 2x12 guitar combo amp brings Fender's legendary Twin Reverb tone into the digital age. Using advanced modeling technology, this innovative amp authentically captures the sound and feel of Fender's iconic 85W tube Twin Reverb amp in a lightweight, convenient package.",
+    image:
+      "https://media.guitarcenter.com/is/image/MMGS7/L63371000001000-00-600x600.jpg",
+    type: "amplifier",
+  },
+];
+
+let microphones = [
+  {
+    name: "Neumann U 87 Ai Shockmount Set Z Microphone With Box",
+    rating: 4.9,
+    brand: "Neumann",
+    cost: 3750,
+    description:
+      "The U 87 Ai shockmount set Z microphone with box is the latest incarnation of an audio icon. First introduced in 1967, the U 87 microphone gained instant acclaim for its pristine sonic quality, versatility, and roadworthiness—and it has since become standard equipment in professional recording studios worldwide. The U 87 Ai is a microphone that combines vintage character with modern performance.",
+    image:
+      "https://media.guitarcenter.com/is/image/MMGS7/271404000000000-00-600x600.jpg",
+    type: "microphone",
+  },
+
+  {
+    name: "AKG C414 XLII Reference Multi-Pattern",
+    rating: 4.5,
+    brand: "AKG",
+    cost: 1319,
+    description:
+      "The AKG C414 XLII is a multi-pattern condenser microphone renowned for its pristine audio quality and versatility. The successor to AKG's legendary C414 B-TL II, the C414 XLII provides nine polar patterns to choose from for unparalleled control. Its impressive 134dB dynamic range captures even the subtlest nuances. Three bass cut filters and four pre-attenuation levels allow for fine-tuning in any situation. A peak hold LED alerts users to overload peaks in an instant. Whether tracking vocals, miking an orchestra or amplifying a kick drum, the C414 XLII delivers professional results for live sound and recording applications alike.",
+    image:
+      "https://media.guitarcenter.com/is/image/MMGS7/485813000000000-00-600x600.jpg",
+    type: "microphone",
+  },
+
+  {
+    name: "Neumann TLM 103 Condenser Microphone Nickel",
+    rating: 4,
+    brand: "Neumann",
+    cost: 1195,
+    description:
+      "The Neumann TLM 103 large-diaphragm condenser microphone provides studio-quality sound for any recording application. Featuring a capsule derived from the legendary Neumann U87, the TLM 103 captures vocals and instruments with stunning accuracy and depth. Its cardioid polar pattern reduces unwanted noise and feedback, making it ideal for live performances and production environments. With an advanced transformerless circuitry for ultralow self-noise, the TLM 103 handles high sound pressure levels up to 138dB without distortion. The TLM 103 delivers the Neumann standard of excellence at an affordable price.",
+    image:
+      "https://media.guitarcenter.com/is/image/MMGS7/J52341000002000-00-600x600.jpg",
+    type: "microphone",
+  },
+
+  {
+    name: "Shure SM7dB Dynamic Vocal Microphone",
+    rating: 4.5,
+    brand: "Shure",
+    cost: 499,
+    description:
+      "Built on one of the most instantly recognizable dynamic mics of all time, the SM7, the Shure SM7dB is geared toward podcasters, streamers and vocalists of all experience levels. The SM7dB delivers the celebrated sound signature of the SM7, heard on iconic studio recordings from Bob Dylan and Michael Jackson to Sheryl Crow, Green Day and Metallica. In fact, it is the same microphone as the latest version of the SM7 line, the SM7B—it uses the same cartridge, shockmount and inner workings—except that it bypasses the need for an external preamp with its built-in preamplifier. This clever engineering allows podcasters, and other content creators and musicians alike, the flexibility of a streamlined, travel-friendly setup, with the option to use an inline preamp if and when desired.",
+    image:
+      "https://media.guitarcenter.com/is/image/MMGS7/M05603000000000-00-600x600.jpg",
+    type: "microphone",
+  },
+
+  {
+    name: "Sony C800G PAC Microphone System",
+    rating: 3.8,
+    brand: "Sony",
+    cost: 10699.99,
+    description:
+      "The Sony C-800G microphone is regarded as one of the finest microphones in the world. Excellent for vocal recording in studios and film post-production houses, Sony's C-800G Studio Tube Condenser Microphone is designed for the highest possible sound reproduction quality.",
+    image:
+      "https://media.guitarcenter.com/is/image/MMGS7/L80306000000000-00-600x600.jpg",
+    type: "microphone",
+  },
+];
+
+let pedals = [
+  {
+    name: "Proline Universal Piano-Style Sustain Pedal",
+    rating: 3.9,
+    brand: "Proline",
+    cost: 29.99,
+    description:
+      "The Proline PSS20 universal piano-style sustain pedal is housed in a wide chassis with rubber skid on the bottom to prevent your pedal from tipping or sliding during performances. Its switchable polarity makes it compatible with nearly all synths or pianos—Yamaha, Roland, Korg, Williams and much more. And the PSS20’s durable internal mechanism offers silent operation and years of reliable use on stage and in the studio. Includes a top-quality six-foot cable with 1/4\" plug.",
+    image:
+      "https://media.guitarcenter.com/is/image/MMGS7/L88693000000000-00-600x600.jpg",
+    type: "pedals",
+  },
+
+  {
+    name: "Yamaha LP-1 3-Pedal Unit",
+    rating: 4.5,
+    brand: "Yamaha",
+    cost: 99.99,
+    description:
+      "Yamaha's LP-1 3 Pedal Unit brings true piano pedaling to your Yamaha P-121, P-125 or P-515 digital piano. The LP-1 attaches to your Yamaha L-121, L-125, L-300 or L-515 stand (sold separately) and provides sustain, sostenuto and soft pedals with half-damper functionality, as found on grand pianos.",
+    image:
+      "https://media.guitarcenter.com/is/image/MMGS7/L83318000002000-00-600x600.jpg",
+    type: "pedals",
+  },
+
+  {
+    name: "Nektar NP-2 Universal Metal Footswitch Pedal",
+    rating: 4.3,
+    brand: "Nektar",
+    cost: 24.99,
+    description:
+      "The Nektar NP-2 universal footswitch pedal is ideal for studio or stage. A rugged rubber grip keeps it in place during performances and polarity switching ensures it will work with any keyboard or electronic product requiring a footswitch.",
+    image:
+      "https://media.guitarcenter.com/is/image/MMGS7/J41573000000000-00-600x600.jpg",
+    type: "pedals",
+  },
+
+  {
+    name: "Yamaha FC4A Piano-Style Sustain Foot Pedal",
+    rating: 4.0,
+    brand: "Yamaha",
+    cost: 28.95,
+    description:
+      "The Yamaha FC4A Piano Style Sustain Foot Pedal lets keyboard players add nuance and emotion to their performance. Yamaha designed this pedal to provide the same sustain function as an acoustic piano, with a feel and action that experienced players expect. The anti-slip base keeps the FC4A securely in place during use. A 6' cable and 1⁄4\" connector ensure compatibility with most keyboards, synthesizers and digital pianos. For over a century, Yamaha has crafted innovative musical instruments and the FC4A sustain pedal upholds that tradition of excellence. Explore your creative potential with a sustain pedal built for piano players.",
+    image:
+      "https://media.guitarcenter.com/is/image/MMGS7/J19485000000000-00-600x600.jpg",
+    type: "pedals",
+  },
+
+  {
+    name: "Yamaha FC7 Volume Pedal",
+    rating: 3.9,
+    brand: "Yamaha",
+    cost: 37.95,
+    description:
+      "Yamaha's FC7 Volume Pedal gives guitarists and other instrumentalists an innovative way to shape their tone during live performances or studio recordings. The FC7 is a heavy-duty foot controller with a fortissimo function allowing performers to accent specific parts of a song for dramatic effect. Its fully adjustable pedal angle, spring point and metal connecting plate for linking multiple pedals provide customized control for any playing style. Compatible with Yamaha's DG series amplifiers, the FC7 Volume Pedal puts precision volume management at your feet.",
+    image:
+      "https://media.guitarcenter.com/is/image/MMGS7/151552000000000-00-600x600.jpg",
+    type: "pedals",
+  }
+]
+
 // Adds item to cart
 function addToCart(itemName) {
   for (let i = 0; i < cartItems.length; i++) {
     if (cartItems[i].name === itemName) {
       return;
     }
-  } 
+  }
 
   cartItems.push(findItem(itemName));
   cartBoolean[allItems.indexOf(findItem(itemName))] = true;
@@ -446,7 +692,7 @@ function removeFromCart(itemName) {
       updateCartFeed(cartItems);
       return;
     }
-  } 
+  }
   return;
 }
 
@@ -463,11 +709,10 @@ function findItem(itemName) {
 function checkItemInCart(item) {
   for (let i = 0; i < cartItems.length; i++) {
     if (item.name === cartItems[i].name) {
-      console.log("item is in cart")
+      console.log("item is in cart");
       return true;
-    }
-    else {
-      console.log("item is not in cart")
+    } else {
+      console.log("item is not in cart");
       return false;
     }
   }
@@ -480,7 +725,7 @@ function updateFeed(itemArray) {
 
   for (let i = 0; i < itemArray.length; i++) {
     let item = itemArray[i];
-    
+
     let cartText = "";
     let cartFunction = "";
     let cartImage = "";
@@ -490,8 +735,7 @@ function updateFeed(itemArray) {
       cartText = "To Remove";
       cartFunction = "removeFromCart";
       cartImage = "remove-from-cart.svg";
-    }
-    else {
+    } else {
       cartText = "Add to Cart";
       cartFunction = "addToCart";
       cartImage = "add-to-cart.svg";
@@ -531,26 +775,24 @@ function updateCartFeed(itemArray) {
 
   if (itemArray.length === 0) {
     cardContainer.innerHTML =
-    '<div class="item-card-cart"><h1 style="font-size: 20px; margin-bottom: 0; padding-top: -3%; padding-left: 3%; width:100%; font-family: \'Roboto Medium\';">Your Cart is Empty...</h1></div>'
-  }
-
-  else {
+      '<div class="item-card-cart"><h1 style="font-size: 20px; margin-bottom: 0; padding-top: -3%; padding-left: 3%; width:100%; font-family: \'Roboto Medium\';">Your Cart is Empty...</h1></div>';
+  } else {
     for (let i = 0; i < itemArray.length; i++) {
       cardContainer.innerHTML =
-      '<div class="item-card"><img src="' +
-      item[i].image +
-      '" class="item-image"><div class="item-info"><h1 class="item-name">' +
-      item[i].name +
-      '</h1><h1 class="item-rating">' +
-      item[i].rating.toFixed(1) +
-      ' out of 5.0</h1><h3 class="item-adjust-cart-text"> ' +
-      '</div><h1 class="item-cost">' +
-      "$" +
-      item[i].cost.toLocaleString("en-US", {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-      }) +
-      "</h1></div>";
+        '<div class="item-card"><img src="' +
+        item[i].image +
+        '" class="item-image"><div class="item-info"><h1 class="item-name">' +
+        item[i].name +
+        '</h1><h1 class="item-rating">' +
+        item[i].rating.toFixed(1) +
+        ' out of 5.0</h1><h3 class="item-adjust-cart-text"> ' +
+        '</div><h1 class="item-cost">' +
+        "$" +
+        item[i].cost.toLocaleString("en-US", {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        }) +
+        "</h1></div>";
     }
   }
 }
@@ -578,6 +820,22 @@ function appendAllInstruments() {
 
   for (let i = 0; i < keyboards.length; i++) {
     allItems.push(keyboards[i]);
+  }
+
+  for (let i = 0; i < capos.length; i++) {
+    allItems.push(capos[i]);
+  }
+
+  for (let i = 0; i < amplifiers.length; i++) {
+    allItems.push(amplifiers[i]);
+  }
+
+  for (let i = 0; i < microphones.length; i++) {
+    allItems.push(microphones[i]);
+  }
+
+  for (let i = 0; i < pedals.length; i++) {
+    allItems.push(pedals[i]);
   }
 }
 
@@ -640,22 +898,24 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
 // Gets input from search bar
 function getInput() {
   const searchTerm = document.getElementById("search-bar").value.toLowerCase();
-  document.getElementById('search-bar').value = '';
-
+  document.getElementById("search-bar").value = "";
 
   for (let i = 0; i < allItems; i++) {
     console.log(typeof allItems[i] + "\n");
   }
 
-
-
-  let results1 = allItems.filter(allItems => similarity(allItems.name.toLowerCase(), searchTerm) > 0.6);
-  let results2 = allItems.filter(allItems => similarity(allItems.brand.toLowerCase(), searchTerm) > 0.6);
-  let results3 = allItems.filter(allItems => similarity(allItems.type.toLowerCase(), searchTerm) > 0.6);
+  let results1 = allItems.filter(
+    (allItems) => similarity(allItems.name.toLowerCase(), searchTerm) > 0.6
+  );
+  let results2 = allItems.filter(
+    (allItems) => similarity(allItems.brand.toLowerCase(), searchTerm) > 0.6
+  );
+  let results3 = allItems.filter(
+    (allItems) => similarity(allItems.type.toLowerCase(), searchTerm) > 0.6
+  );
 
   let mergedResults = results1.concat(results2);
   mergedResults = mergedResults.concat(results3);
@@ -668,9 +928,11 @@ function similarity(s1, s2) {
   const shorter = s1.length > s2.length ? s2 : s1;
   const longerLength = longer.length;
   if (longerLength === 0) {
-      return 1.0;
+    return 1.0;
   }
-  return (longerLength - editDistance(longer, shorter)) / parseFloat(longerLength);
+  return (
+    (longerLength - editDistance(longer, shorter)) / parseFloat(longerLength)
+  );
 }
 
 //Similarity Checker Helper Function
@@ -680,29 +942,23 @@ function editDistance(s1, s2) {
 
   let costs = new Array();
   for (let i = 0; i <= s1.length; i++) {
-      let lastValue = i;
-      for (let j = 0; j <= s2.length; j++) {
-          if (i === 0)
-              costs[j] = j;
-          else {
-              if (j > 0) {
-                  let newValue = costs[j - 1];
-                  if (s1.charAt(i - 1) !== s2.charAt(j - 1))
-                      newValue = Math.min(Math.min(newValue, lastValue),
-                          costs[j]) + 1;
-                  costs[j - 1] = lastValue;
-                  lastValue = newValue;
-              }
-          }
+    let lastValue = i;
+    for (let j = 0; j <= s2.length; j++) {
+      if (i === 0) costs[j] = j;
+      else {
+        if (j > 0) {
+          let newValue = costs[j - 1];
+          if (s1.charAt(i - 1) !== s2.charAt(j - 1))
+            newValue = Math.min(Math.min(newValue, lastValue), costs[j]) + 1;
+          costs[j - 1] = lastValue;
+          lastValue = newValue;
+        }
       }
-      if (i > 0)
-          costs[s2.length] = lastValue;
+    }
+    if (i > 0) costs[s2.length] = lastValue;
   }
   return costs[s2.length];
 }
-
-
-
 
 // // This function adds cards the page to display the data in the array
 // function showCards() {

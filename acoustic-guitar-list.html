@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WeMusic | Home</title>
+    <meta name="description" content="A Catalog of Instruments and Musical Equipment">
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="scripts.js"></script>
+</head>
+
+<body>
+    <header class="header">   
+        <nav class="header-nav">
+            <a href="index.html" class="logo-container">
+                <img src="assets/music-note.svg" alt="SVG Logo of Music Note" class="music-logo">
+                <h1 class="we-music-title">We<span style="color: #E94F37">Music</span></h1>
+            </a>
+
+            <ul class="header-options">
+               <li>
+                   <div class="dropdown">
+                       <button class="dropbtn">Instruments</button>
+                       <div class="dropdown-content">
+                           <div class="instruments-grid-container">
+                               <div class="instrument-category">
+                                   <a href="acoustic-guitar-list.html" onclick="updateFeed(acousticGuitars)"><img src="assets/instruments/acoustic-guitar.jpg" alt="Acoustic Guitar" class="instruments-grid-item"></a>
+                                   <h2>Acoustic Guitars</h2>
+                               </div>
+
+                               <div class="instrument-category">
+                                   <a href="keyboard-list.html"><img src="assets/instruments/keyboard.jpg" alt="Keyboard" class="instruments-grid-item"></a>
+                                   <h2>Keyboard</h2>
+                               </div> 
+                               <div class="instrument-category">
+                                   <a href="electric-guitar-list.html"><img src="assets/instruments/electric-guitar.jpg" alt="Electric Guitar" class="instruments-grid-item"></a>
+                                   <h2>Electric Guitars</h2>
+                               </div>
+                               <div class="instrument-category">
+                                   <a href="piano-list.html"><img src="assets/instruments/piano.jpg" alt="Piano" class="instruments-grid-item"></a>
+                                   <h2>Piano</h2>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   <img src="assets/dropdown-arrow.svg" alt="SVG Logo of Dropdown Arrow" class="dropdown-logo">
+               </li>
+
+               <li>
+                   <div class="dropdown">
+                       <button class="dropbtn">Accessories</button>
+                       <div class="dropdown-content">
+                           <div class="instruments-grid-container">
+                               <div class="instrument-category">
+                                   <a href="capo-list.html" onclick="updateFeed(capos)"><img src="assets/accessories/capo.jpg" alt="Capo" class="instruments-grid-item"></a>
+                                   <h2>Capo</h2>
+                               </div>
+
+                               <div class="instrument-category">
+                                   <a href="amplifiers-list.html"><img src="assets/accessories/amplifier.jpg" alt="Amplifier" class="instruments-grid-item"></a>
+                                   <h2>Amplifier</h2>
+                               </div> 
+                               <div class="instrument-category">
+                                   <a href="microphone-list.html"><img src="assets/accessories/microphone.jpg" alt="Microphone" class="instruments-grid-item"></a>
+                                   <h2>Microphone</h2>
+                               </div>
+                               <div class="instrument-category">
+                                   <a href="pedals-list.html"><img src="assets/accessories/pedal.jpg" alt="Pedal" class="instruments-grid-item"></a>
+                                   <h2>Pedal</h2>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   <img src="assets/dropdown-arrow.svg" alt="SVG Logo of Dropdown Arrow" class="dropdown-logo">
+               </li>
+
+                <li>
+                    <div style="padding: 3.5%" class="dropdown">
+                        <img src="assets/shopping-cart.svg" alt="SVG Shopping Cart" class="shopping-cart-logo"></a>
+                        <div id="dropdown-content-cart" class="dropdown-content-cart">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="wrap">
+        <div class="search">
+           <input id="search-bar" type="text" class="searchTerm" placeholder="Search WeMusic">
+           <button type="submit" class="searchButton" onclick="getInput()">
+            <img src="assets/search-icon.svg" alt="SVG Logo of Search Button" class="search-icon">
+          </button>
+        </div>
+    </div>
+
+    <!-- Sorting Button -->
+    <div class="dropdown-sort">
+        <button class="dropbtn-sort">Sort By</button>
+        <div class="dropdown-content-sort">
+          <a href="#" onclick="sortItemsByRating(allItems); updateFeed(allItems);">Rating</a>
+          <a href="#" onclick="sortItemsAlphabetically(allItems); updateFeed(allItems);">Name</a>
+          <a href="#" onclick="sortItemsByPrice(allItems); updateFeed(allItems);">Price</a>
+        </div>
+    </div>
+
+    <div id="results-text">
+        <div class="main-page-text">
+            <h1 class="main-page-title-text">Results</h1>
+        </div>
+    </div>
+
+    <!-- Holds all of the main page dynamically loaded content -->
+    <div id="results-container" class="results-container">
+    </div>  
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+         sortItemsByRating(acousticGuitars); // Sorts allItems by rating
+         updateFeed(acousticGuitars); // Updates the feed with items from allItems
+         updateCartFeed(cartItems); // Updates the cart feed with items from cartItems
+      });
+   </script>
+
+    <script>
+        window.addEventListener('scroll', () => { 
+            const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = window.scrollY;
+
+            if (Math.ceil(scrolled) === scrollable) {
+                // if we reach the bottom scrollable area
+                console.log('Reached the bottom!');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
