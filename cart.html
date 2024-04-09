@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WeMusic | Home</title>
+    <meta name="description" content="A Catalog of Instruments and Musical Equipment">
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="scripts.js"></script>
+</head>
+
+<body>
+    <header class="header">   
+        <nav class="header-nav">
+            <a href="index.html" class="logo-container">
+                <img src="assets/music-note.svg" alt="SVG Logo of Music Note" class="music-logo">
+                <h1 class="we-music-title">We<span style="color: #E94F37">Music</span></h1>
+            </a>
+
+            <ul class="header-options">
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Instruments</button>
+                        <div class="dropdown-content">
+                            <div class="instruments-grid-container">
+                                <a href="#"><img src="assets/instruments/acoustic-guitar.jpg" alt="Acoustic Guitar" class="instruments-grid-item"></a>
+                                <a href="#"><img src="assets/instruments/electric-guitar.jpg" alt="Electric Guitar" class="instruments-grid-item"></a>
+                                <a href="#"><img src="assets/instruments/piano.jpg" alt="Piano" class="instruments-grid-item"></a>
+                                <a href="#"><img src="assets/instruments/keyboard.jpg" alt="Keyboard" class="instruments-grid-item"></a>
+                                <a href="#"><img src="assets/instruments/violin.jpg" alt="Violin" class="instruments-grid-item"></a>
+                                <a href="#"><img src="assets/instruments/viola.jpg" alt="Viola" class="instruments-grid-item"></a>
+                                <a href="#"><img src="assets/instruments/cello.jpg" alt="Cello" class="instruments-grid-item"></a>
+                                <a href="#"><img src="assets/instruments/double-bass.jpg" alt="Double Bass" class="instruments-grid-item"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="assets/dropdown-arrow.svg" alt="SVG Logo of Dropdown Arrow" class="dropdown-logo">
+                </li>
+
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Accessories</button>
+                        <div class="dropdown-content">
+
+                        </div>
+                    </div>
+                    <img src="assets/dropdown-arrow.svg" alt="SVG Logo of Dropdown Arrow" class="dropdown-logo">
+                </li>
+
+                <li>
+                    <a href="#"><img src="assets/shopping-cart.svg" alt="SVG Shopping Cart" class="shopping-cart-logo"></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="wrap">
+        <div class="search">
+           <input type="text" class="searchTerm" placeholder="Search WeMusic">
+           <button type="submit" class="searchButton">
+             <i class="fa fa-search"></i>
+          </button>
+        </div>
+    </div>
+
+    <!-- Sorting Button -->
+    <div class="dropdown-sort">
+        <button class="dropbtn-sort">Sort By</button>
+        <div class="dropdown-content-sort">
+          <a href="#" onclick="sortItemsByRating(allItems); updateFeed(allItems);">Rating</a>
+          <a href="#" onclick="sortItemsAlphabetically(allItems); updateFeed(allItems);">Name</a>
+          <a href="#" onclick="sortItemsByPrice(allItems); updateFeed(allItems);">Price</a>
+        </div>
+    </div>
+
+    <div id="results-text">
+        <div class="main-page-text">
+            <h1 class="main-page-title-text">Cart</h1>
+        </div>
+    </div>
+
+    <!-- Holds all of the main page dynamically loaded content -->
+    <div id="cart-results-container" class="results-container">
+      
+    </div>  
+
+    <script>
+        window.addEventListener('scroll', () => { 
+            const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = window.scrollY;
+
+            if (Math.ceil(scrolled) === scrollable) {
+                // if we reach the bottom scrollable area
+                console.log('Reached the bottom!');
+            }
+        });
+    </script>
+
+</body>
+
+</html>

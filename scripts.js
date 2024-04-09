@@ -40,6 +40,7 @@ let titles = [
 // Arrays
 
 let cartItems = [];
+let cartBoolean = [];
 let allItems = [];
 
 class Item {
@@ -263,7 +264,7 @@ let electricGuitars = [
     brand: "Fender",
     cost: 2799.99,
     description:
-      'The Fender American Ultra Telecaster melds innovative design with classic Tele vibe for guitarists seeking top-tier performance. This unique Telecaster features Fender\'s Modern D neck profile with rolled edges for endless playing comfort. The compound 10"–14" radius fingerboard allows you to solo effortlessly anywhere on the neck. Dual Ultra Noiseless Vintage pickups serve up a plethora of pristine tones without hum or buzz. This limited-edition Tele showcases a stunning Tiger\'s Eye finish on a flame maple top and a lightweight alder body with contoured edges for hours of playing comfort. With sealed locking tuners and a premium case, this versatile Tele provides state-of-the-art function for gigs, sessions and beyond.',
+      "The Fender American Ultra Telecaster melds innovative design with classic Tele vibe for guitarists seeking top-tier performance. This unique Telecaster features Fender's Modern D neck profile with rolled edges for endless playing comfort. The compound 10\"–14\" radius fingerboard allows you to solo effortlessly anywhere on the neck. Dual Ultra Noiseless Vintage pickups serve up a plethora of pristine tones without hum or buzz. This limited-edition Tele showcases a stunning Tiger's Eye finish on a flame maple top and a lightweight alder body with contoured edges for hours of playing comfort. With sealed locking tuners and a premium case, this versatile Tele provides state-of-the-art function for gigs, sessions and beyond.",
     image:
       "https://media.guitarcenter.com/is/image/MMGS7/M04246000001000-00-600x600.jpg",
     type: "Electric Guitar",
@@ -404,24 +405,144 @@ let keyboards = [
   },
 ];
 
-// updates the feed with the items in the allItems array
-function updateFeed() {
-  console.log("updating")
+// Adds item to cart
+function addToCart(itemName) {
+  for (let i = 0; i < cartItems.length; i++) {
+    if (cartItems[i].name === itemName) {
+      return;
+    }
+  } 
+
+  cartItems.push(findItem(itemName));
+  cartBoolean[allItems.indexOf(findItem(itemName))] = true;
+  updateFeed(allItems);
+  updateCartFeed(cartItems);
+}
+
+// Removes item from cart
+function removeFromCart(itemName) {
+  console.log("Hello");
+  for (let i = 0; i < cartItems.length; i++) {
+    if (cartItems[i].name === itemName) {
+      cartItems.splice(i, 1);
+      cartBoolean[allItems.indexOf(findItem(itemName))] = false;
+      updateFeed(allItems);
+      updateCartFeed(cartItems);
+      return;
+    }
+  } 
+  return;
+}
+
+// Finds the item object from the allItems array
+function findItem(itemName) {
+  for (let i = 0; i < allItems.length; i++) {
+    if (allItems[i].name === itemName) {
+      return allItems[i];
+    }
+  }
+}
+
+// Checks if item is in cart
+function checkItemInCart(item) {
+  for (let i = 0; i < cartItems.length; i++) {
+    if (item.name === cartItems[i].name) {
+      console.log("item is in cart")
+      return true;
+    }
+    else {
+      console.log("item is not in cart")
+      return false;
+    }
+  }
+}
+
+// updates the feed with the items in the whichever array is supplied in the parameter
+function updateFeed(itemArray) {
   const cardContainer = document.getElementById("results-container");
   cardContainer.innerHTML = "";
 
-  for (let i = 0; i < allItems.length; i++) {
-    let item = allItems[i];
-    console.log(item.name);
-    cardContainer.innerHTML += '<div class="item-card"><img src="' +
+  for (let i = 0; i < itemArray.length; i++) {
+    let item = itemArray[i];
+    
+    let cartText = "";
+    let cartFunction = "";
+    let cartImage = "";
+
+    // if is true (in cart)
+    if (cartBoolean[i]) {
+      cartText = "To Remove";
+      cartFunction = "removeFromCart";
+      cartImage = "remove-from-cart.svg";
+    }
+    else {
+      cartText = "Add to Cart";
+      cartFunction = "addToCart";
+      cartImage = "add-to-cart.svg";
+    }
+
+    cardContainer.innerHTML +=
+      '<div class="item-card"><img src="' +
       item.image +
       '" class="item-image"><div class="item-info"><h1 class="item-name">' +
       item.name +
       '</h1><h1 class="item-rating">' +
       item.rating.toFixed(1) +
-      ' out of 5.0</h1><h3 class="item-adjust-cart-text"> Add to Cart </h3><a href="#" class="item-cart"><img src="assets/add-to-cart.svg" alt="SVG Add to Cart"></a></div><h1 class="item-cost">' + '$' +
-      item.cost.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}); +
+      ' out of 5.0</h1><h3 class="item-adjust-cart-text"> ' +
+      cartText +
+      ' </h3><a href="#" id="' +
+      item.name +
+      '" onclick="' +
+      cartFunction +
+      "('" +
+      item.name +
+      '\')" class="item-cart"><img src="assets/' +
+      cartImage +
+      '" alt="SVG Add to Cart"></a></div><h1 class="item-cost">' +
+      "$" +
+      item.cost.toLocaleString("en-US", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      }) +
       "</h1></div>";
+  }
+}
+
+function updateCartFeed(itemArray) {
+  const cardContainer = document.getElementById("dropdown-content-cart");
+  cardContainer.innerHTML = "";
+  console.log(cartItems);
+
+  if (itemArray.length === 0) {
+    cardContainer.innerHTML =
+    '<div class="item-card-cart"><h1 style="font-size: 20px; margin-bottom: 0; padding-top: -3%; padding-left: 3%; width:100%; font-family: \'Roboto Medium\';">Your Cart is Empty...</h1></div>'
+  }
+
+  else {
+    for (let i = 0; i < itemArray.length; i++) {
+      cardContainer.innerHTML =
+      '<div class="item-card"><img src="' +
+      item[i].image +
+      '" class="item-image"><div class="item-info"><h1 class="item-name">' +
+      item[i].name +
+      '</h1><h1 class="item-rating">' +
+      item[i].rating.toFixed(1) +
+      ' out of 5.0</h1><h3 class="item-adjust-cart-text"> ' +
+      '</div><h1 class="item-cost">' +
+      "$" +
+      item[i].cost.toLocaleString("en-US", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      }) +
+      "</h1></div>";
+    }
+  }
+}
+
+function initializeFeedCart() {
+  // Let true = in cart, false = not in cart
+  for (let i = 0; i < allItems.length; i++) {
+    cartBoolean.push(false);
   }
 }
 
@@ -444,19 +565,19 @@ function appendAllInstruments() {
   }
 }
 
-//Sorts the items by rating
-function sortItemsByRating() {
-  allItems.sort((a, b) => {
+//Sorts items by rating
+function sortItemsByRating(itemArray) {
+  itemArray.sort((a, b) => {
     return b.rating - a.rating;
   });
 }
 
-function sortItemsAlphabetically() {
-  allItems.sort((a, b) => {
+//Sorts all items by alphabetical order
+function sortItemsAlphabetically(itemArray) {
+  itemArray.sort((a, b) => {
     const nameA = a.name.toUpperCase();
     const nameB = b.name.toUpperCase();
     if (nameA < nameB) {
-      console.log("hi")
       return -1;
     }
     if (nameA > nameB) {
@@ -466,18 +587,19 @@ function sortItemsAlphabetically() {
   });
 }
 
-function sortItemsByPrice() {
-  allItems.sort((a, b) => {
+//Sorts all items by price
+function sortItemsByPrice(itemArray) {
+  itemArray.sort((a, b) => {
     return b.cost - a.cost;
   });
 }
 
-
 // On Page Load
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   appendAllInstruments(); // Populates allItems array
-  sortItemsByRating(); // Sorts allItems by rating
-  updateFeed(); // Updates the feed with items from allItems
+  sortItemsByRating(allItems); // Sorts allItems by rating
+  updateFeed(allItems); // Updates the feed with items from allItems
+  updateCartFeed(cartItems); // Updates the cart feed with items from cartItems
 });
 
 // Event listener for dropdown button for sorting

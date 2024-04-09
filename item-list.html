@@ -47,7 +47,11 @@
                 </li>
 
                 <li>
-                    <a href="#"><img src="assets/shopping-cart.svg" alt="SVG Shopping Cart" class="shopping-cart-logo"></a>
+                    <div style="padding: 3.5%" class="dropdown">
+                        <img src="assets/shopping-cart.svg" alt="SVG Shopping Cart" class="shopping-cart-logo"></a>
+                        <div id="dropdown-content-cart" class="dropdown-content-cart">
+                        </div>
+                    </div>
                 </li>
             </ul>
         </nav>
@@ -66,12 +70,11 @@
     <div class="dropdown-sort">
         <button class="dropbtn-sort">Sort By</button>
         <div class="dropdown-content-sort">
-          <a href="#" onclick="sortItemsByRating(); updateFeed();">Rating</a>
-          <a href="#" onclick="sortItemsAlphabetically(); updateFeed();">Name</a>
-          <a href="#" onclick="sortItemsByPrice(); updateFeed();">Price</a>
+          <a href="#" onclick="sortItemsByRating(allItems); updateFeed(allItems);">Rating</a>
+          <a href="#" onclick="sortItemsAlphabetically(allItems); updateFeed(allItems);">Name</a>
+          <a href="#" onclick="sortItemsByPrice(allItems); updateFeed(allItems);">Price</a>
         </div>
     </div>
-
 
     <div id="results-text">
         <div class="main-page-text">
