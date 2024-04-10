@@ -97,9 +97,9 @@
     <div class="dropdown-sort">
         <button class="dropbtn-sort">Sort By</button>
         <div class="dropdown-content-sort">
-          <a href="#" onclick="sortItemsByRating(allItems); updateFeed(allItems);">Rating</a>
-          <a href="#" onclick="sortItemsAlphabetically(allItems); updateFeed(allItems);">Name</a>
-          <a href="#" onclick="sortItemsByPrice(allItems); updateFeed(allItems);">Price</a>
+          <a href="#" onclick="sortItemsByRating(checkLocation()); updateFeed(checkLocation());">Rating</a>
+          <a href="#" onclick="sortItemsAlphabetically(checkLocation()); updateFeed(checkLocation());">Name</a>
+          <a href="#" onclick="sortItemsByPrice(checkLocation()); updateFeed(checkLocation());">Price</a>
         </div>
     </div>
 
