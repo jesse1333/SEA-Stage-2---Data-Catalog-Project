@@ -912,10 +912,14 @@ function sortItemsByPrice(itemArray) {
 
 // Shows item
 function showItem(itemName) {
-  console.log("hello")
-  console.log(itemName);
-
   let item = findItem(itemName);
+
+  // // Clears Cart Text
+  const cartTextContainer = document.getElementById("cart-text");
+  console.log(cartTextContainer);
+  cartTextContainer.innerHTML = '';
+  const cartContainer = document.getElementById("cart-results-container");
+  cartContainer.innerHTML = '';
 
   // Sets the header text to Items
   const titleContainer = document.getElementById("main-page-title-text");
