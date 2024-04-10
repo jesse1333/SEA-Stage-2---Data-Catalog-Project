@@ -150,7 +150,7 @@ class Keyboard extends Item {
   }
 }
 
-//Database
+// Database
 let acousticGuitars = [
   {
     name: "Gibson J-45 Standard Rosewood Acoustic-Electric",
@@ -667,15 +667,15 @@ let pedals = [
   }
 ]
 
-//Scrolls to cart upon pressing cart icon
+// Scrolls to cart upon pressing cart icon
 function scrollToTop() {
   window.scrollTo({
     top: 210,
-    behavior: "smooth" // This makes the scrolling smooth
+    behavior: "smooth"
 });
 }
 
-//Checks which location cart is at
+// Checks which location cart is at
 function checkLocation() {
   if (window.location.href.includes("item-list.html")) {
     return allItems;
@@ -759,7 +759,7 @@ function checkItemInCart(item) {
   }
 }
 
-// updates the feed with the items in the whichever array is supplied in the parameter
+// Updates the feed with the items in the whichever array is supplied in the parameter
 function updateFeed(itemArray) {
   const cardContainer = document.getElementById("results-container");
   cardContainer.innerHTML = "";
@@ -881,14 +881,14 @@ function appendAllInstruments() {
   }
 }
 
-//Sorts items by rating
+// Sorts items by rating
 function sortItemsByRating(itemArray) {
   itemArray.sort((a, b) => {
     return b.rating - a.rating;
   });
 }
 
-//Sorts all items by alphabetical order
+// Sorts all items by alphabetical order
 function sortItemsAlphabetically(itemArray) {
   itemArray.sort((a, b) => {
     const nameA = a.name.toUpperCase();
@@ -903,14 +903,14 @@ function sortItemsAlphabetically(itemArray) {
   });
 }
 
-//Sorts all items by price
+// Sorts all items by price
 function sortItemsByPrice(itemArray) {
   itemArray.sort((a, b) => {
     return b.cost - a.cost;
   });
 }
 
-//Shows item
+// Shows item
 function showItem(itemName) {
   console.log("hello")
   console.log(itemName);
@@ -998,7 +998,7 @@ function getInput() {
   updateFeed(mergedResults);
 }
 
-//Similarity Checker Function
+// Similarity Checker Function
 function similarity(s1, s2) {
   const longer = s1.length > s2.length ? s1 : s2;
   const shorter = s1.length > s2.length ? s2 : s1;
@@ -1011,7 +1011,7 @@ function similarity(s1, s2) {
   );
 }
 
-//Similarity Checker Helper Function
+// Similarity Checker Helper Function
 function editDistance(s1, s2) {
   s1 = s1.toLowerCase();
   s2 = s2.toLowerCase();
@@ -1035,58 +1035,3 @@ function editDistance(s1, s2) {
   }
   return costs[s2.length];
 }
-
-// // This function adds cards the page to display the data in the array
-// function showCards() {
-//     const cardContainer = document.getElementById("card-container");
-//     cardContainer.innerHTML = "";
-//     const templateCard = document.querySelector(".card");
-
-//     for (let i = 0; i < titles.length; i++) {
-//         let title = titles[i];
-
-//         // This part of the code doesn't scale very well! After you add your
-//         // own data, you'll need to do something totally different here.
-//         let imageURL = "";
-//         if (i == 0) {
-//             imageURL = FRESH_PRINCE_URL;
-//         } else if (i == 1) {
-//             imageURL = CURB_POSTER_URL;
-//         } else if (i == 2) {
-//             imageURL = EAST_LOS_HIGH_POSTER_URL;
-//         }
-
-//         const nextCard = templateCard.cloneNode(true); // Copy the template card
-//         editCardContent(nextCard, title, imageURL); // Edit title and image
-//         cardContainer.appendChild(nextCard); // Add new card to the container
-//     }
-// }
-
-// function editCardContent(card, newTitle, newImageURL) {
-//     card.style.display = "block";
-
-//     const cardHeader = card.querySelector("h2");
-//     cardHeader.textContent = newTitle;
-
-//     const cardImage = card.querySelector("img");
-//     cardImage.src = newImageURL;
-//     cardImage.alt = newTitle + " Poster";
-
-//     // You can use console.log to help you debug!
-//     // View the output by right clicking on your website,
-//     // select "Inspect", then click on the "Console" tab
-//     console.log("new card:", newTitle, "- html: ", card);
-// }
-
-// // This calls the addCards() function when the page is first loaded
-// document.addEventListener("DOMContentLoaded", showCards);
-
-// function quoteAlert() {
-//     console.log("Button Clicked!")
-//     alert("I guess I can kiss heaven goodbye, because it got to be a sin to look this good!");
-// }
-
-// function removeLastCard() {
-//     titles.pop(); // Remove last item in titles array
-//     showCards(); // Call showCards again to refresh
-// }

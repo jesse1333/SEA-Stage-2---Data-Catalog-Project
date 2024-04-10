@@ -12,7 +12,6 @@ html,
 body {
     margin: 0;
     padding: 0;
-    /* background-image: url('assets/homepage-background.jpg'); */
     background-size: cover;
     background-color: #F6F7EB;
 }
@@ -84,9 +83,9 @@ a {
 }
 
 .shopping-cart-logo {
-    width: 18%;
+    width: 16%;
     height: auto;
-    padding-top: 5%;
+    padding-top: 1.5%;
 }
 
 .main-page-text {
@@ -106,7 +105,6 @@ a {
     color: #393E41;
 }
 
-/* Dropdown Button */
 .dropbtn {
     font-family: "Roboto Light";
     background-color: transparent;
@@ -116,7 +114,6 @@ a {
     padding-bottom: 10%;
 }
   
-/* The container <div> - needed to position the dropdown content */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -129,33 +126,31 @@ a {
     padding-top: 5%;
 }
 
-/* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
-    width: 700px; /* Adjust width as needed */
-    height: 500px; /* Adjust height as needed */
-    padding: 20px; /* Adjust padding as needed */
+    width: 700px;
+    height: 500px;
+    padding: 20px;
     left: -200%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    transform: translateX(-20%); /* Center the menu horizontally */
+    transform: translateX(-20%);
 }
 
 .dropdown-content-cart {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
-    width: 500px; /* Adjust width as needed */
-    height: 500px; /* Adjust height as needed */
+    width: 500px;
+    height: 500px;
     left: -200%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    transform: translateX(-20%); /* Center the menu horizontally */
+    transform: translateX(-20%);
 }
 
-/* Show the dropdown menu */
 .dropdown:hover .dropdown-content {
     display: block;
 }
@@ -165,27 +160,19 @@ a {
 }
 
 .instruments-grid-container {
-    width: 700px; /* Adjust width as needed */
-    height: 500px; /* Adjust height as needed */
-    padding: 20px; /* Adjust padding as needed */
+    width: 700px; 
+    height: 500px;
+    padding: 20px;
 
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 4 columns */
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .instruments-grid-item {
     width: 85%;
-    height: auto; /* Set a fixed height for uniformity, adjust as needed */
+    height: auto;
     overflow:hidden;
 }
-
-
-
-/* Search Bar Code */
-
-
-
-
 
 .search {
   width: 100%;
@@ -198,7 +185,7 @@ a {
   border: 3px solid #E94F37;
   border-right: none;
   padding: 5px;
-  height: 25px; /* Height of bar */
+  height: 25px;
   border-radius: 5px 0 0 5px;
   outline: none;
   color: #9DBFAF;
@@ -278,10 +265,6 @@ a {
     right: 0;
 }
 
-
-
-/* Results Code */
-
 #item-card-container {
     display: flex;
     justify-content: center;
@@ -289,17 +272,15 @@ a {
 }
 
 .item-card {
-    /* display: none; */
     display: flex;
     justify-content: left;
-    width: 900px; /* Adjust width as needed */
+    width: 900px; 
     height: 100px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
-    margin: 20px auto; /* Center the box horizontally */
-    /* border: solid 1pt #393E41; */
+    margin: 20px auto; 
 }
 
 .item-card-content {
@@ -313,7 +294,6 @@ a {
     height: auto; 
     padding-left: 20px;
 }
-
 
 .item-info {
     font-family: "Roboto Light";
@@ -362,19 +342,16 @@ a {
     height: auto; 
 }
 
-
 .item-view {
-    /* display: none; */
     display: flex;
     justify-content: left;
-    width: 900px; /* Adjust width as needed */
+    width: 900px; 
     height: 350px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
-    margin: 20px auto; /* Center the box horizontally */
-    /* border: solid 1pt #393E41; */
+    margin: 20px auto;
 }
 
 .item-view-content {
@@ -398,17 +375,13 @@ a {
     font-size: 14px;
 }
 
-
-
-
-/** Sort Button **/
 .dropdown-sort {
     position: absolute;
     display: inline-block;
-    left: 84%;
-    top: 25%;
+    left: 77.5%;
+    top: 27%;
     font-family: "Roboto Light";
-  }
+}
   
 .dropbtn-sort {
     background-color: #E94F37;
@@ -420,7 +393,6 @@ a {
     border-radius: 10px;
 }
 
-/* Dropdown content */
 .dropdown-content-sort {
     display: none;
     position: absolute;
@@ -430,7 +402,6 @@ a {
     z-index: 1;
 }
 
-/* Links inside the dropdown */
 .dropdown-content-sort a {
     color: black;
     padding: 12px 16px;
