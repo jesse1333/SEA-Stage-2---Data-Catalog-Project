@@ -667,6 +667,45 @@ let pedals = [
   }
 ]
 
+//Scrolls to cart upon pressing cart icon
+function scrollToTop() {
+  window.scrollTo({
+    top: 210,
+    behavior: "smooth" // This makes the scrolling smooth
+});
+}
+
+//Checks which location cart is at
+function checkLocation() {
+  if (window.location.href.includes("item-list.html")) {
+    return allItems;
+  }
+  else if (window.location.href.includes("acoustic-guitar-list.html")) {
+    return acousticGuitars;
+  }
+  else if (window.location.href.includes("amplifiers-list.html")) {
+    return amplifiers;
+  }
+  else if (window.location.href.includes("capo-list.html")) {
+    return capos;
+  }
+  else if (window.location.href.includes("electric-guitar-list.html")) {
+    return electricGuitars;
+  }
+  else if (window.location.href.includes("keyboard-list.html")) {
+    return keyboards;
+  }
+  else if (window.location.href.includes("microphone-list.html")) {
+    return microphones;
+  }
+  else if (window.location.href.includes("pedals-list.html")) {
+    return pedals;
+  }
+  else if (window.location.href.includes("piano-list.html")) {
+    return pianos;
+  }
+}
+
 // Adds item to cart
 function addToCart(itemName) {
   for (let i = 0; i < cartItems.length; i++) {
@@ -675,20 +714,22 @@ function addToCart(itemName) {
     }
   }
 
+  const itemArray = checkLocation();
   cartItems.push(findItem(itemName));
-  cartBoolean[allItems.indexOf(findItem(itemName))] = true;
-  updateFeed(allItems);
+  cartBoolean[itemArray.indexOf(findItem(itemName))] = true;
+  updateFeed(itemArray);
   updateCartFeed(cartItems);
 }
 
 // Removes item from cart
 function removeFromCart(itemName) {
-  console.log("Hello");
+  const itemArray = checkLocation();
+
   for (let i = 0; i < cartItems.length; i++) {
     if (cartItems[i].name === itemName) {
       cartItems.splice(i, 1);
-      cartBoolean[allItems.indexOf(findItem(itemName))] = false;
-      updateFeed(allItems);
+      cartBoolean[itemArray.indexOf(findItem(itemName))] = false;
+      updateFeed(itemArray);
       updateCartFeed(cartItems);
       return;
     }
@@ -769,26 +810,27 @@ function updateFeed(itemArray) {
 }
 
 function updateCartFeed(itemArray) {
-  const cardContainer = document.getElementById("dropdown-content-cart");
+  const cardContainer = document.getElementById("cart-results-container");
   cardContainer.innerHTML = "";
   console.log(cartItems);
 
   if (itemArray.length === 0) {
     cardContainer.innerHTML =
-      '<div class="item-card-cart"><h1 style="font-size: 20px; margin-bottom: 0; padding-top: -3%; padding-left: 3%; width:100%; font-family: \'Roboto Medium\';">Your Cart is Empty...</h1></div>';
+      '<div class="item-card" style="height: 50px"><h1 style="font-size: 20px; margin-bottom: 0; padding-top: -3%; padding-left: 3%; width:100%; font-family: \'Roboto Medium\';">Your Cart is Empty...</h1></div>';
   } else {
     for (let i = 0; i < itemArray.length; i++) {
-      cardContainer.innerHTML =
+      let item = itemArray[i];
+      cardContainer.innerHTML +=
         '<div class="item-card"><img src="' +
-        item[i].image +
+        item.image +
         '" class="item-image"><div class="item-info"><h1 class="item-name">' +
-        item[i].name +
+        item.name +
         '</h1><h1 class="item-rating">' +
-        item[i].rating.toFixed(1) +
+        item.rating.toFixed(1) +
         ' out of 5.0</h1><h3 class="item-adjust-cart-text"> ' +
         '</div><h1 class="item-cost">' +
         "$" +
-        item[i].cost.toLocaleString("en-US", {
+        item.cost.toLocaleString("en-US", {
           minimumFractionDigits: 2,
           maximumFractionDigits: 2,
         }) +

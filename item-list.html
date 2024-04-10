@@ -74,10 +74,10 @@
                 </li>
 
                 <li>
-                    <div style="padding: 3.5%" class="dropdown">
-                        <img src="assets/shopping-cart.svg" alt="SVG Shopping Cart" class="shopping-cart-logo"></a>
-                        <div id="dropdown-content-cart" class="dropdown-content-cart">
-                        </div>
+                    <div style="padding: 3.5%">
+                        <a href="#" onclick="scrollToTop()">
+                            <img src="assets/shopping-cart.svg" alt="SVG Shopping Cart" class="shopping-cart-logo">
+                        </a>
                     </div>
                 </li>
             </ul>
@@ -102,6 +102,16 @@
           <a href="#" onclick="sortItemsByPrice(allItems); updateFeed(allItems);">Price</a>
         </div>
     </div>
+
+    <div id="results-text">
+        <div class="main-page-text">
+            <h1 class="main-page-title-text" style="padding-top: 20%">Cart</h1>
+        </div>
+    </div>
+
+    <!-- Holds all of the cart dynamically loaded content -->
+    <div id="cart-results-container" class="results-container">
+    </div>  
 
     <div id="results-text">
         <div class="main-page-text">
